@@ -1,13 +1,15 @@
-var Letter = function(letter) {
-  this.show = false;
-  this.value = letter;
-  this.display = function() {
-    if(this.show) {
-      return this.value;
-    } else {
-      return ('_');
-    }
-  };
+var Letter = function(letter){
+  this.display = '_';
+  this.letter = letter;
+  this.guessed = false;
+};
+
+Letter.prototype.checkLetter = function(guess){
+  if (guess.toLowerCase() === this.letter.toLowerCase()){
+    this.display = this.letter;
+    this.guessed = true;
+  }
+  return this.guessed;
 };
 
 module.exports = Letter;
