@@ -1,4 +1,4 @@
-var Letter = require('./letter.js');
+
 
 var Word = function(word) {
   this.numOfGuesses = 5;
